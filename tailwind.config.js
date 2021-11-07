@@ -5,7 +5,13 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                plex: "'IBM Plex Sans', sans-serif",
+                rubik: "'Rubik', sans-serif",
+                roboto: "'Roboto', sans-serif",
+            }
+        },
     },
     variants: {
         extend: {},

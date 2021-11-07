@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block main %}
-    <div class="bg-green-500 h-screen w-full">
-
+    <div class="relative m-0 p-0 font-roboto"
+         x-data="
+         {
+            categories_drop: false,
+            blog_posts_drop: false
+         }">
+       {% include 'header.html' %}
     </div>
 {% endblock main %}

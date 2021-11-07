@@ -1,0 +1,102 @@
+{% load static %}
+<header class="flex flex-col s-header fixed bottom-0 top-0 left-0 align-top bg-black/95 text-white w-1/5 p-10">
+            <div class="header__top">
+                <div class="header__logo mt-6">
+                    <a class="site-logo" href="index.html">
+                        <h1 class="text-4xl font-medium">Typerite.</h1>
+                    </a>
+                </div>
+
+                <div class="header__search hidden">
+
+                    <form role="search" method="get" class="header__search-form" action="#">
+                        <label>
+                            <span class="hide-content">Search for:</span>
+                            <input type="search" class="header__search-field" placeholder="Type Keywords" value=""
+                                   name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="header__search-submit" value="Search">
+                    </form>
+
+                    <a href="#0" title="Close Search" class="header__search-close">Close</a>
+
+                </div>  <!-- end header__search -->
+
+                <!-- toggles -->
+                <a href="#0" class="header__search-trigger"></a>
+                <a href="#0" class="header__menu-toggle hidden"><span>Menu</span></a>
+
+            </div> <!-- end header__top -->
+
+            <nav class="header__nav-wrap font-rubik font-light text-gray-200/80 flex justify-between flex-col flex-1 leading-8 mt-8">
+                <ul class="header__nav">
+                    <li class="p-2 current header__nav-links"><a href="#" title="">Home</a></li>
+                    <li class="p-2 has-children header__nav-dropdown relative"
+                        @click="categories_drop = !categories_drop">
+                        <a class="header__nav-links" href="#" title="">Categories</a>
+                        <ul class="sub-menutext-sm"
+                            x-show="categories_drop" x-collapse.duration.500ms>
+                            <li class="header__nav-links header__nav-link-item"><a href="category.html">Lifestyle</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="category.html">Health</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="category.html">Family</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="category.html">Management</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="category.html">Travel</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="category.html">Work</a></li>
+                        </ul>
+                    </li>
+                    <li class="p-2 has-children header__nav-dropdown relative"
+                        @click="blog_posts_drop = !blog_posts_drop">
+                        <a class="header__nav-links" href="#" title="">Blog Posts</a>
+                        <ul class="sub-menu"
+                            x-show="blog_posts_drop" x-collapse.duration.500ms>
+                            <li class="header__nav-links header__nav-link-item"><a href="single-video.html">Video Post</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="single-audio.html">Audio Post</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="single-gallery.html">Gallery Post</a></li>
+                            <li class="header__nav-links header__nav-link-item"><a href="single-standard.html">Standard Post</a></li>
+                        </ul>
+                    </li>
+                    <li class="p-2 header__nav-links"><a href="styles.html" title="">Styles</a></li>
+                    <li class="p-2 header__nav-links"><a href="page-about.html" title="">About</a></li>
+                    <li class="p-2 header__nav-links"><a href="page-contact.html" title="">Contact</a></li>
+                </ul> <!-- end header__nav -->
+
+                <ul class="header__social flex gap-2">
+                    <li class="ss-facebook">
+                        <a href="https://facebook.com/">
+                            <div class="header__nav-socials">
+                                <img
+                                        src="{% static 'images/icons/social/icon-facebook.svg' %}"
+                                        alt="facebook icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ss-twitter">
+                        <a href="https://twitter.com/">
+                            <div class="header__nav-socials">
+                                <img
+                                        src="{% static 'images/icons/social/icon-twitter.svg' %}"
+                                        alt="facebook icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ss-dribbble">
+                        <a href="https://dribbble.com/">
+                            <div class="header__nav-socials">
+                                <img
+                                        src="{% static 'images/icons/social/icon-dribbble.svg' %}"
+                                        alt="facebook icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ss-instagram">
+                        <a href="https://instagram.com/">
+                            <div class="header__nav-socials">
+                                <img
+                                        src="{% static 'images/icons/social/icon-instagram.svg' %}"
+                                        alt="facebook icon">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav> <!-- end header__nav-wrap -->
+        </header>
